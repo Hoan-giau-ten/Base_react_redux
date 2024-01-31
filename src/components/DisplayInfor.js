@@ -1,4 +1,5 @@
 import React from "react";
+import "./DisplayInfor.scss";
 
 class DisplayInfor extends React.Component {
   // Hàm ẩn hiển (chú ý có dấu !)
@@ -17,7 +18,7 @@ class DisplayInfor extends React.Component {
     // console.log(listUsers);
     // props => viết tắt của properties
     return (
-      <div>
+      <div className="display-infor-container">
         <div>
           <span
             onClick={() => {
