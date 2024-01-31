@@ -1,5 +1,3 @@
-// class component
-// function component
 import React from "react";
 import AddUserinfor from "./AddUserinfor";
 import DisplayInfor from "./DisplayInfor";
@@ -17,6 +15,14 @@ class MyComponent extends React.Component {
       listUsers: [usersObj, ...this.state.listUsers],
     });
   };
+
+  handleDeleteUser = (userId) => {
+    let listUsersClone = [...this.state.listUsers];
+    listUsersClone = listUsersClone.filter((item) => item.id !== userId);
+    this.setState({
+      listUsers: listUsersClone,
+    });
+  };
   //JSX
   render() {
     //DRY: don't repert yourseft
@@ -24,7 +30,10 @@ class MyComponent extends React.Component {
       <div>
         <AddUserinfor handleAddNewUser={this.handleAddNewUser} />
         <br /> <br />
-        <DisplayInfor listUsers={this.state.listUsers} />
+        <DisplayInfor
+          listUsers={this.state.listUsers}
+          handleDeleteUser={this.handleDeleteUser}
+        />
       </div>
     );
   }

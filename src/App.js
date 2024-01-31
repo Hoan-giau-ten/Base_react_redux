@@ -7,9 +7,10 @@ import React from "react";
 
 class App extends React.Component {
   render() {
+    // tempalte + logic js
     return (
-      <div>
-        Hello world!
+      <div className="app-container">
+        {/* Hello world! */}
         <MyComponent></MyComponent>
       </div>
     );
