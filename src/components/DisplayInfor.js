@@ -1,5 +1,6 @@
 import React from "react";
 import "./DisplayInfor.scss";
+import logo from "./../logo.svg";
 
 class DisplayInfor extends React.Component {
   // Hàm ẩn hiển (chú ý có dấu !)
@@ -19,6 +20,7 @@ class DisplayInfor extends React.Component {
     // props => viết tắt của properties
     return (
       <div className="display-infor-container">
+        <img src={logo} />
         <div>
           <span
             onClick={() => {
