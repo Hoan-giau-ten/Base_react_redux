@@ -4,15 +4,35 @@ import logo from "./../logo.svg";
 
 class DisplayInfor extends React.Component {
   // Hàm ẩn hiển (chú ý có dấu !)
+
+  // React class, phải có hàm constructor mới là chuẩn
+  constructor(props) {
+    console.log(">>> call constructor; 1");
+    super(props);
+    this.state = {
+      isShowListUser: true,
+    };
+  }
+
+  componentDidMount() {
+    console.log(">>> Call me component did mount");
+    setTimeout(() => {
+      document.title = "HoiDanIT";
+    }, 3000);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(">>> call me component did update:", this.props, prevProps);
+  }
+
   handleShowHide = () => {
     this.setState({
       isShowListUser: !this.state.isShowListUser,
     });
   };
-  state = {
-    isShowListUser: true,
-  };
+
   render() {
+    console.log(">>call me render:");
     // destructuring array/object
     const { listUsers } = this.props;
     // console.log(listUsers);
